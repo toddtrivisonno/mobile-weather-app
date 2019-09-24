@@ -1,9 +1,10 @@
 document.getElementById('submit').addEventListener('click', getReport);
 
+
 function getReport() {
    console.log('submit pressed');
 
-   let zip = document.getElementById('zipCode').value
+   let zip = document.getElementById('zipCode').value;
    console.log(zip);
 
    const apiURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
@@ -15,34 +16,40 @@ function getReport() {
    fetch(zipURL)
       .then(
          function (x) {
-            return x.json();
+            console.log(x);
+            if(x.status === 200) {
+               $('.alert').addClass('d-none').removeClass('show');
+               return x.json();
+            } else {
+               $('.alert').removeClass('d-none').addClass('show');
+               // document.getElementById('error').setAttribute('display', d-block);
+            }
          }
       ).then(
          function (response) {
+               let city = response.name;
+               document.getElementById('city').innerHTML = city;
 
+               let tempK = response.main.temp;
+               document.getElementById('kel').innerHTML = Math.round(tempK) + " K";
 
-            let city = response.name;
-            document.getElementById('city').innerHTML = city;
+               let tempC = response.main.temp;
+               document.getElementById('cel').innerHTML = Math.round(Number(tempC - 273.15)) + " C";
 
-            let tempK = response.main.temp;
-            document.getElementById('kel').innerHTML = Math.round(tempK) + " K";
+               let tempF = response.main.temp;
+               document.getElementById('fahr').innerHTML = Math.round(Number((tempF - 273.15) * (9 / 5) + 32)) + " F";
 
-            let tempC = response.main.temp;
-            document.getElementById('cel').innerHTML = Math.round(Number(tempC - 273.15)) + " C";
+               let condition = response['weather'][0]['main'];
+               document.getElementById('condition').innerHTML = condition;
 
-            let tempF = response.main.temp;
-            document.getElementById('fahr').innerHTML = Math.round(Number((tempF - 273.15) * (9 / 5) + 32)) + " F";
-
-            let condition = response['weather'][0]['main'];
-            document.getElementById('condition').innerHTML = condition;
-
-            let seasonIcon = response['weather'][0]['icon'];
-            const iconURL = "http://openweathermap.org/img/w/" + seasonIcon + ".png";
-            document.getElementById('seasonDisplay').innerHTML = '<img src="' + iconURL + '">';
+               let seasonIcon = response['weather'][0]['icon'];
+               const iconURL = "http://openweathermap.org/img/w/" + seasonIcon + ".png";
+               document.getElementById('seasonDisplay').innerHTML = '<img src="' + iconURL + '">';
 
 
 
-            console.log(response);
+               console.log(response);
+            
          })
 }
 

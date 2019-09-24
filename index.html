@@ -26,9 +26,20 @@
          <input class="form-control form-control-lg" type="text" placeholder="Enter Zip Code" id="zipCode">
       </div>
       <div class="col-4 mr-2 pl-1">
-         <button type="submit" class="btn btn-info btn-lg" id="submit" data-toggle="popover" data-placement="bottom" data-content="Oops! Not a valid Zip Code, please try again">Submit</button>
+         <button type="submit" class="btn btn-info btn-lg" id="submit">Submit</button>
       </div>
    </div>
+
+   <!-- Error Notification -->
+
+   <div class="alert alert-info alert-dismissible d-none">
+         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+         <strong>Oops!</strong> Not a recognized zip code. Please try again.
+       </div>
+
+   <!-- <div class="alert alert-danger d-none" data-toggle="collapse" data-target="#error" role="alert" id="error">
+         Oops! Not a recognized zip code. Please try again.
+       </div> -->
 
    <!-- City -->
    <div class="card w-75 text-center mx-auto m-3">
