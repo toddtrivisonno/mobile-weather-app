@@ -20,50 +20,59 @@
       </h2>
    </div>
 
+   <!-- Zip Code Submit -->
    <div class="row">
       <div class="col-7 ml-3">
-         <input class="form-control form-control-lg" type="text" placeholder="Enter Zip Code">
+         <input class="form-control form-control-lg" type="text" placeholder="Enter Zip Code" id="zipCode">
       </div>
       <div class="col-4 mr-2 pl-1">
-         <button type="submit" class="btn btn-info btn-lg">Submit</button>
+         <button type="submit" class="btn btn-info btn-lg" id="submit">Submit</button>
       </div>
    </div>
 
-   <div class="card w-75 text-center mx-auto m-3">
+   <!-- Error Notification -->
+
+   <div class="alert alert-info alert-dismissible d-none">
+         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+         <strong>Oops!</strong> Not a recognized zip code. Please try again.
+       </div>
+
+   <!-- <div class="alert alert-danger d-none" data-toggle="collapse" data-target="#error" role="alert" id="error">
+         Oops! Not a recognized zip code. Please try again.
+       </div> -->
+
+   <!-- City -->
+   <div class="card w-75 text-center mx-auto m-3 d-none">
       <h6 class="card-header">City</h6>
       <div class="card-body">
-         <h5 class="card-text">Lexington</h5>
+         <h5 class="card-text" id="city"></h5>
       </div>
    </div>
 
-   <div class="card w-75 text-center mx-auto m-3">
+   <!-- Temperature -->
+   <div class="card w-75 text-center mx-auto m-3 d-none">
       <h6 class="card-header">Temperature</h6>
       <div class="card-body">
          <table class="table table-bordered">
             <thead>
                <tr>
-                  <th scope="col">100 F</th>
-                  <th scope="col">100 C</th>
-                  <th scope="col">100 K</th>
+                  <th scope="col" id="fahr"></th>
+                  <th scope="col" id="cel"></th>
+                  <th scope="col" id="kel"></th>
                </tr>
             </thead>
          </table>
       </div>
    </div>
 
-   <div class="card w-75 text-center mx-auto m-3">
+   <!-- Condition -->
+   <div class="card w-75 text-center mx-auto m-3 d-none">
       <h6 class="card-header">Condition</h6>
       <div class="card-body">
-         <h5 class="card-text">Sunny</h5>
+            <h5 class="card-text" id="seasonDisplay"></h5>
+         <h5 class="card-text" id="condition"></h5>
       </div>
    </div>
-
-   <div class="card w-75 text-center mx-auto m-3">
-         <h6 class="card-header">Season Display</h6>
-         <div class="card-body">
-            <h5 class="card-text">Img</h5>
-         </div>
-      </div>
 
    <!-- Optional JavaScript -->
    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -76,6 +85,7 @@
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"></script>
+      <script src="main.js"></script>
 </body>
 
 </html>

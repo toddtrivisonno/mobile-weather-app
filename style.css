@@ -1,3 +1,11 @@
 body {
    background-color: #CDDBBF;
 }
+
+.card-header{
+   background-color: #CCBCC4;
+}
+
+.card-body {
+   background-color: #FCFAF2;
+}
