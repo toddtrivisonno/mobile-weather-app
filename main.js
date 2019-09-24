@@ -7,7 +7,7 @@ function getReport() {
    let zip = document.getElementById('zipCode').value;
    console.log(zip);
 
-   const apiURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
+   const apiURL = 'https://api.openweathermap.org/data/2.5/weather?zip=';
    const apiKey = '&APPID=596b042b52ac7e2e0c5b0b12e2dd4e6a';
    const zipURL = apiURL + zip + apiKey;
 
