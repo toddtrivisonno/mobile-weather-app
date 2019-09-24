@@ -20,48 +20,53 @@
       </h2>
    </div>
 
+   <!-- Zip Code Submit -->
    <div class="row">
       <div class="col-7 ml-3">
          <input class="form-control form-control-lg" type="text" placeholder="Enter Zip Code" id="zipCode">
       </div>
       <div class="col-4 mr-2 pl-1">
-         <button type="submit" class="btn btn-info btn-lg" id="submit">Submit</button>
+         <button type="submit" class="btn btn-info btn-lg" id="submit" data-toggle="popover" data-placement="bottom" data-content="Oops! Not a valid Zip Code, please try again">Submit</button>
       </div>
    </div>
 
+   <!-- City -->
    <div class="card w-75 text-center mx-auto m-3">
       <h6 class="card-header">City</h6>
       <div class="card-body">
-         <h5 class="card-text" id="city">Lexington</h5>
+         <h5 class="card-text" id="city"></h5>
       </div>
    </div>
 
+   <!-- Temperature -->
    <div class="card w-75 text-center mx-auto m-3">
       <h6 class="card-header">Temperature</h6>
       <div class="card-body">
          <table class="table table-bordered">
             <thead>
                <tr>
-                  <th scope="col">100 F</th>
-                  <th scope="col">100 C</th>
-                  <th scope="col">100 K</th>
+                  <th scope="col" id="fahr"></th>
+                  <th scope="col" id="cel"></th>
+                  <th scope="col" id="kel"></th>
                </tr>
             </thead>
          </table>
       </div>
    </div>
 
+   <!-- Condition -->
    <div class="card w-75 text-center mx-auto m-3">
       <h6 class="card-header">Condition</h6>
       <div class="card-body">
-         <h5 class="card-text">Sunny</h5>
+         <h5 class="card-text" id="condition"></h5>
       </div>
    </div>
 
+   <!-- Season Display -->
    <div class="card w-75 text-center mx-auto m-3">
          <h6 class="card-header">Season Display</h6>
          <div class="card-body">
-            <h5 class="card-text">Img</h5>
+            <h5 class="card-text" id="seasonDisplay"></h5>
          </div>
       </div>
 
